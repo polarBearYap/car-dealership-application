@@ -1,0 +1,285 @@
+﻿@model PaginatedList<Car>
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get" role="form">
+    <div class="form-group no-color">
+        <input type="hidden" name="SortOrder" value="@ViewData["CurrentSort"]" />
+        <input type="hidden" name="CurrentFilter" value="@ViewData["CurrentFilter"]" />
+        <input type="hidden" name="PageSize" value="@ViewData["CurrentPageSize"]" />
+        Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <button type="submit" class="btn btn-default">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button> |
+        <a asp-action="Index"
+           asp-route-pageSize="@ViewData["CurrentPageSize"]"
+           asp-route-sortOrder="@ViewData["CurrentSort"]">Back to Full List</a>
+    </div>
+</form>
+<form asp-action="Index" method="get" role="form">
+    <div class="form-group no-color">
+        <input type="hidden" name="SortOrder" value="@ViewData["CurrentSort"]" />
+        <input type="hidden" name="CurrentFilter" value="@ViewData["CurrentFilter"]" />
+        Page size: <input type="number" name="PageSize" min="1" value="@ViewData["CurrentPageSize"]" />
+        <button type="submit" class="btn btn-default">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+        </button>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["TitleSortParam"]"
+                   asp-route-pageSize="@ViewData["CurrentPageSize"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    @Html.DisplayNameFor(model => model.SingleOrDefault().Title)
+                    @if (string.IsNullOrEmpty((string)ViewData["CurrentSort"]))
+                    {
+                        <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+                    }
+                    else if ((string)ViewData["CurrentSort"] == "title_desc")
+                    {
+                        <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+                    }
+                </a>
+            </th>
+            @{
+                string[] displayColumnNames = {
+                    Html.DisplayNameFor(model => model.SingleOrDefault().CarModel.CarBrand.Name),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().CarModel.Name),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Aspiration),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Assembled),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Colour),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().DirectInjection),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Doors),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().EngineCC),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().FuelType),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().HeightMM),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().LengthMM),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().ManufactureYear),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Mileage),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().PeakPowerHP),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().PeakTorqueNM),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Price),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().PricePerMonth),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().SeatCapacity),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().SteeringType),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().Transmission),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().WheelBaseMM),
+                    Html.DisplayNameFor(model => model.SingleOrDefault().WidthMM)
+                };
+
+                string[] ascendingColumnSorts = {
+                    "brand",
+                    "model",
+                    "aspiration",
+                    "assembled",
+                    "colour",
+                    "direct_injection",
+                    "doors",
+                    "engine_cc",
+                    "fuel_type",
+                    "height_mm",
+                    "length_mm",
+                    "manufacture_year",
+                    "mileage",
+                    "peak_power",
+                    "peak_torque",
+                    "price",
+                    "price_per_month",
+                    "seat_capacity",
+                    "steering_type",
+                    "transmission",
+                    "wheel_base_mm",
+                    "width_mm"
+                };
+
+                string[] descendingColumnSorts = {
+                    "brand_desc",
+                    "model_desc",
+                    "aspiration_desc",
+                    "assembled_desc",
+                    "colour_desc",
+                    "direct_injection_desc",
+                    "doors_desc",
+                    "engine_cc_desc",
+                    "fuel_type_desc",
+                    "height_mm_desc",
+                    "length_mm_desc",
+                    "manufacture_year_desc",
+                    "mileage_desc",
+                    "peak_power_desc",
+                    "peak_torque_desc",
+                    "price_desc",
+                    "price_per_month_desc",
+                    "seat_capacity_desc",
+                    "steering_type_desc",
+                    "transmission_desc",
+                    "wheel_base_mm_desc",
+                    "width_mm_desc"
+                };
+
+                string[] SortParams = {
+                    (string) ViewData["BrandSortParam"],
+                    (string) ViewData["ModelSortParam"],
+                    (string) ViewData["AspirationSortParam"],
+                    (string) ViewData["AssembledSortParam"],
+                    (string) ViewData["ColourSortParam"],
+                    (string) ViewData["DirectInjectionSortParam"],
+                    (string) ViewData["DoorsSortParam"],
+                    (string) ViewData["EngineCCSortParam"],
+                    (string) ViewData["FuelTypeSortParam"],
+                    (string) ViewData["HeightMMSortParam"],
+                    (string) ViewData["LengthMMSortParam"],
+                    (string) ViewData["ManufactureYearSortParam"],
+                    (string) ViewData["MileageSortParam"],
+                    (string) ViewData["PeakPowerSortParam"],
+                    (string) ViewData["PeakTorqueSortParam"],
+                    (string) ViewData["PriceSortParam"],
+                    (string) ViewData["PricePerMonthSortParam"],
+                    (string) ViewData["SeatCapacitySortParam"],
+                    (string) ViewData["SteeringTypeSortParam"],
+                    (string) ViewData["TransmissionSortParam"],
+                    (string) ViewData["WheelBaseMMSortParam"],
+                    (string) ViewData["WidthMMSortParam"]
+                };
+            }
+            @for (int i = 0; i < displayColumnNames.Length; i++)
+            {
+                <th>
+                    <a asp-action="Index"
+                       asp-route-sortOrder="@SortParams[i]"
+                       asp-route-pageSize="@ViewData["CurrentPageSize"]"
+                       asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @displayColumnNames[i]
+                        @if ((string)ViewData["CurrentSort"] == ascendingColumnSorts[i])
+                        {
+                            <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+                        }
+                        else if ((string)ViewData["CurrentSort"] == descendingColumnSorts[i])
+                        {
+                            <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-sort" aria-hidden="true"></i>
+                        }
+                    </a>
+                </th>
+            }
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel.CarBrand.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aspiration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Assembled)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Colour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DirectInjection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EngineCC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FuelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HeightMM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LengthMM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufactureYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mileage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeakPowerHP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeakTorqueNM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerMonth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SteeringType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transmission)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WheelBaseMM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WidthMM)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   asp-route-pageSize="@ViewData["CurrentPageSize"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   asp-route-pageSize="@ViewData["CurrentPageSize"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

@@ -1,0 +1,42 @@
+﻿@model CarDealershipWebApp.Models.CarModel
+
+@{
+    ViewData["Title"] = "Details";
+    ViewData["Subject"] = "Car Model";
+}
+
+<div class="container-fluid px-4 pb-3" role="main">
+    <h1 class="mt-4">@ViewData["Subject"] @ViewData["Title"]</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-area="" asp-controller="CarModels" asp-action="Index">@ViewData["Subject"]</a>
+        </li>
+        <li class="breadcrumb-item active">
+            @ViewData["Title"]
+        </li>
+    </ol>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarBrand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarBrand.ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
