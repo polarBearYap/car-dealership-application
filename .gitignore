@@ -2,4 +2,5 @@
 /car_dealership_application/node_modules/
 /car_dealership_application/obj/
 /car_dealership_application/Properties/
-/car_dealership_application/wwwroot/lib/
+/car_dealership_application/wwwroot/js/*
+/car_dealership_application/wwwroot/lib/*
