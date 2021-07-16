@@ -5,11 +5,12 @@
 
 ## Table of Contents
 * [Learning Purpose](#Learning-Purpose-)
+* [Main Features](#Main-Feature-)
+* [Demo](#Demo)
 * [Technology Applied](#Technology-Applied-)
 * [Third-party npm libraries](#Third-party-npm-libraries-Credits-to-them-)
 * [Software Requirement](#software-requirement-windows-10-environment-)
-* [Project setup](#Project-setup-)
-* [Demo](#Demo)
+* [Project Setup](#Project-Setup-)
 * [Future Works](#Future-Works-)
 
 ## Learning Purpose &#128218;
@@ -17,7 +18,7 @@
 - To practice essential skills for server-side web development in ASP.NET.
 - To prepare for my future career as full-stack web developer &#129321;.
 
-## Main features
+## Main Features
 - Using self-deployed flask machine learning API (found [here](https://github.com/polarBearYap/car-dealership-flask-api)) to predict car price.
 
 ## Demo
@@ -47,7 +48,7 @@
 
 > Read [here](https://stackoverflow.com/questions/30901434/iis-manager-in-windows-10) on how to enable IIS manager in Windows 10. 
 
-## Project setup &#x2699;
+## Project Setup &#x2699;
 1. Open the project in Visual Studio 2019 by clicking on the `CarDealershipWebApp.sln`.
 2. Once open, `libman.json` right-click the libman.json file in Solution Explorer and select the "Restore Client-Side Libraries" option.
 3. Then, open the cmd and navigate project root directory, then type `npm install`. This will install all the npm packages into `node_modules` folder.
