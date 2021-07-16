@@ -1,1 +1,27 @@
 # car-dealership-application
+
+## Learning Purpose &#128218;
+- To practice essential skills for client-side web development using libraries like Babel, Webpack, Typescript, React, ...
+- To practice essential skills for server-side web development in ASP.NET
+
+## Technology Applied &#129302;
+- [ASP.NET Core MVC 5.0](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-5.0)
+- [Typescript](https://www.typescriptlang.org/): Perform type checking to produce more robust Javascript code
+
+## Third-party npm libraries (Credits to them)
+- [Webpack](https://webpack.js.org/): To compile Typescript to Javascript
+- [gulp](https://gulpjs.com/): To automate deployment workflow like compiling Typescript before clean/build 
+- [@types libraries](https://www.typescriptlang.org/dt/search): 
+- [Chart.js](https://www.chartjs.org/): To create beautiful charts with mature plugins found [here](https://github.com/chartjs/awesome#plugins)
+- [chartjs-plugin-zoom](https://github.com/chartjs/chartjs-plugin-zoom): To provide zoom functionalities for chart.js
+- Bootstrap & JQuery: To build responsive & Interative Web
+
+## Software Requirement (Windows 10 Environment) &#128187;
+- Visual Studio 2019 Community Edition
+
+## Future Work &#128302;
+1. Learn [React](https://reactjs.org/) and learn to develop ASP.NET Core application with React framework.
+2. Learn to use [Babel](https://babeljs.io/) with Typescript and Webpack to compile to Javascript code that is compatible to older browser (hopefully Internet Explorer &#129315;).
+3. Learn how to deploy the whole web application to Azure App service using Docker.
+4. Master webpack. (e.g. Learn on how to bundle Typescript/css files into multiple entry files for different [areas](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/areas?view=aspnetcore-5.0).
+5. Explore various APIs available in ASP.NET Core like [Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-5.0&tabs=visual-studio).
