@@ -1,5 +1,6 @@
-# car-dealership-application
-- A proof of concept/simple prototype for ASP.NET Core application integrated with client side frameworks libraries.
+# car-dealership-application (version 1.0)
+
+- A **proof of concept/simple prototype** for ASP.NET Core application integrated with client side frameworks libraries.
 - **Important**: Note this repository is related to these two repositories [here](https://github.com/polarBearYap/car-dealership-automl) and [here](https://github.com/polarBearYap/car-dealership-flask-api). This repository is foucsed on web development that uses the deployed car dealership Flask API in Azure.. Be sure to check out all of them.
 
 ## Table of Contents
@@ -15,6 +16,16 @@
 - To practice essential skills for client-side web development using libraries like Babel, Webpack, Typescript, React, ...
 - To practice essential skills for server-side web development in ASP.NET.
 - To prepare for my future career as full-stack web developer &#129321;.
+
+## Main features
+- Using self-deployed flask machine learning API (found [here](https://github.com/polarBearYap/car-dealership-flask-api)) to predict car price.
+
+## Demo
+1. Demo for car price prediction
+    - ![Demo for Car Dealership Wep App](resources/car-dealership-application-demo2.gif)
+
+2. Demo for basic functionalities like CRUD
+    - ![Demo for Car Dealership Wep App](resources/car-dealership-application-demo.gif)
 
 ## Technology Applied &#129302;
 - [ASP.NET Core MVC 5.0](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-5.0)
@@ -41,13 +52,6 @@
 2. Once open, `libman.json` right-click the libman.json file in Solution Explorer and select the "Restore Client-Side Libraries" option.
 3. Then, open the cmd and navigate project root directory, then type `npm install`. This will install all the npm packages into `node_modules` folder.
 4. Bind the Gulp task is to "Before Build/After Build/Clean". Follow the steps in [here](http://www.codedigest.com/quick-start/14/using-of-gulp-gulpfilejs-in-visual-studio-2017). 
-
-## Demo
-1. Demo for car price prediction
-    - ![Demo for Car Dealership Wep App](resources/car-dealership-application-demo2.gif)
-
-2. Demo for basic functionalities like CRUD
-    - ![Demo for Car Dealership Wep App](resources/car-dealership-application-demo.gif)
 
 ## Future Works &#128302;
 1. Learn [React](https://reactjs.org/) and learn to develop ASP.NET Core application with React framework.
