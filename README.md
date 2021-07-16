@@ -25,6 +25,7 @@
 1. Open the project in Visual Studio 2019 by clicking on the `CarDealershipWebApp.sln`.
 2. Once open, `libman.json` right-click the libman.json file in Solution Explorer and select the "Restore Client-Side Libraries" option.
 3. Then, open the cmd and navigate project root directory, then type `npm install`. This will install all the npm packages into `node_modules` folder.
+4. Bind the Gulp task is to "Before Build/After Build/Clean". Follow the steps in [here](http://www.codedigest.com/quick-start/14/using-of-gulp-gulpfilejs-in-visual-studio-2017). 
 
 ## Future Work &#128302;
 1. Learn [React](https://reactjs.org/) and learn to develop ASP.NET Core application with React framework.
