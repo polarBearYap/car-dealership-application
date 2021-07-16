@@ -1,7 +1,6 @@
 # car-dealership-application
 - A proof of concept/simple prototype for ASP.NET Core application integrated with client side frameworks libraries.
-- **Important**: Note this repository is related to these two repositories [here](https://github.com/polarBearYap/car-dealership-automl) and [here](https://github.com/polarBearYap/car-dealership-flask-api).
-is the foundation for this repository. This repository is foucsed on web development that uses the deployed car dealership Flask API in Azure.. Be sure to check out all of them.
+- **Important**: Note this repository is related to these two repositories [here](https://github.com/polarBearYap/car-dealership-automl) and [here](https://github.com/polarBearYap/car-dealership-flask-api). This repository is foucsed on web development that uses the deployed car dealership Flask API in Azure.. Be sure to check out all of them.
 
 ## Learning Purpose &#128218;
 - To practice essential skills for client-side web development using libraries like Babel, Webpack, Typescript, React, ...
