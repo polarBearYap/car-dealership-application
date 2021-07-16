@@ -2,6 +2,15 @@
 - A proof of concept/simple prototype for ASP.NET Core application integrated with client side frameworks libraries.
 - **Important**: Note this repository is related to these two repositories [here](https://github.com/polarBearYap/car-dealership-automl) and [here](https://github.com/polarBearYap/car-dealership-flask-api). This repository is foucsed on web development that uses the deployed car dealership Flask API in Azure.. Be sure to check out all of them.
 
+## Table of Contents
+* [Learning Purpose](#Learning-Purpose-)
+* [Technology Applied](#Technology-Applied-)
+* [Third-party npm libraries](#Third-party npm libraries-Credits-to-them-)
+* [Software Requirement](#software-requirement-windows-10-environment-)
+* [Project setup](#Project-setup-)
+* [Demo](#Demo)
+* [Future Works](#Future-Works-)
+
 ## Learning Purpose &#128218;
 - To practice essential skills for client-side web development using libraries like Babel, Webpack, Typescript, React, ...
 - To practice essential skills for server-side web development in ASP.NET.
@@ -23,13 +32,20 @@
 ## Software Requirement (Windows 10 Environment) &#128187;
 - Visual Studio 2019 Community Edition
 
-# Project setup &#x2699;
+## Project setup &#x2699;
 1. Open the project in Visual Studio 2019 by clicking on the `CarDealershipWebApp.sln`.
 2. Once open, `libman.json` right-click the libman.json file in Solution Explorer and select the "Restore Client-Side Libraries" option.
 3. Then, open the cmd and navigate project root directory, then type `npm install`. This will install all the npm packages into `node_modules` folder.
 4. Bind the Gulp task is to "Before Build/After Build/Clean". Follow the steps in [here](http://www.codedigest.com/quick-start/14/using-of-gulp-gulpfilejs-in-visual-studio-2017). 
 
-## Future Work &#128302;
+## Demo
+1. Demo for car price prediction
+    - ![Demo for Car Dealership Wep App](resources/car-dealership-application-demo2.gif)
+
+2. Demo for basic functionalities like CRUD
+    - ![Demo for Car Dealership Wep App](resources/car-dealership-application-demo.gif)
+
+## Future Works &#128302;
 1. Learn [React](https://reactjs.org/) and learn to develop ASP.NET Core application with React framework.
 2. Learn to use [Babel](https://babeljs.io/) with Typescript and Webpack to compile to Javascript code that is compatible to older browser (hopefully Internet Explorer &#129315;).
 3. Learn how to deploy the whole web application to Azure App service using Docker.
