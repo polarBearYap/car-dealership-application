@@ -5,10 +5,10 @@
 
 ## Table of Contents
 * [Learning Purpose](#Learning-Purpose-)
-* [Main Features](#Main-Feature-)
+* [Main Features](#main-features)
 * [Demo](#Demo)
 * [Technology Applied](#Technology-Applied-)
-* [Third-party npm libraries](#Third-party-npm-libraries-Credits-to-them-)
+* [Third-party npm libraries](#third-party-npm-libraries-credits-to-them)
 * [Software Requirement](#software-requirement-windows-10-environment-)
 * [Project Setup](#Project-Setup-)
 * [Future Works](#Future-Works-)
