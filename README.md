@@ -5,7 +5,7 @@
 ## Table of Contents
 * [Learning Purpose](#Learning-Purpose-)
 * [Technology Applied](#Technology-Applied-)
-* [Third-party npm libraries](#Third-party npm libraries-Credits-to-them-)
+* [Third-party npm libraries](#Third-party-npm-libraries-Credits-to-them-)
 * [Software Requirement](#software-requirement-windows-10-environment-)
 * [Project setup](#Project-setup-)
 * [Demo](#Demo)
@@ -31,6 +31,10 @@
 
 ## Software Requirement (Windows 10 Environment) &#128187;
 - Visual Studio 2019 Community Edition
+- Node.js: To use npm package manager
+- IIS manager: To host car price prediction flask API in local machine for faster testing 
+
+> Read [here](https://stackoverflow.com/questions/30901434/iis-manager-in-windows-10) on how to enable IIS manager in Windows 10. 
 
 ## Project setup &#x2699;
 1. Open the project in Visual Studio 2019 by clicking on the `CarDealershipWebApp.sln`.
