@@ -2,7 +2,8 @@
 
 ## Learning Purpose &#128218;
 - To practice essential skills for client-side web development using libraries like Babel, Webpack, Typescript, React, ...
-- To practice essential skills for server-side web development in ASP.NET
+- To practice essential skills for server-side web development in ASP.NET.
+- To prepare for my future career as full-stack web developer &#129321;.
 
 ## Technology Applied &#129302;
 - [ASP.NET Core MVC 5.0](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-5.0)
@@ -11,13 +12,19 @@
 ## Third-party npm libraries (Credits to them)
 - [Webpack](https://webpack.js.org/): To compile Typescript to Javascript
 - [gulp](https://gulpjs.com/): To automate deployment workflow like compiling Typescript before clean/build 
-- [@types libraries](https://www.typescriptlang.org/dt/search): 
+- [@types libraries](https://www.typescriptlang.org/dt/search): To provide TypeScript support for javascript-only libraries
 - [Chart.js](https://www.chartjs.org/): To create beautiful charts with mature plugins found [here](https://github.com/chartjs/awesome#plugins)
 - [chartjs-plugin-zoom](https://github.com/chartjs/chartjs-plugin-zoom): To provide zoom functionalities for chart.js
 - Bootstrap & JQuery: To build responsive & Interative Web
+- [fontawesome](https://fontawesome.com/v4.7/icons/): To provide UI icons 
 
 ## Software Requirement (Windows 10 Environment) &#128187;
 - Visual Studio 2019 Community Edition
+
+# Project setup &#x2699;
+1. Open the project in Visual Studio 2019 by clicking on the `CarDealershipWebApp.sln`.
+2. Once open, `libman.json` right-click the libman.json file in Solution Explorer and select the "Restore Client-Side Libraries" option.
+3. Then, open the cmd and navigate project root directory, then type `npm install`. This will install all the npm packages into `node_modules` folder.
 
 ## Future Work &#128302;
 1. Learn [React](https://reactjs.org/) and learn to develop ASP.NET Core application with React framework.
